@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 7f2738743737c441d8f9fe1b64bcc80d
+guid: f776735a16c374c6c8897975610f8d01
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6957681044683080812
-    second: player_facingforwardanimation_0
+      213: -7791752638867363331
+    second: Player_Right_0
   - first:
-      213: 6637087964760002375
-    second: player_facingforwardanimation_1
+      213: 6286454110433351642
+    second: Player_Right_1
   - first:
-      213: -8567094211590943435
-    second: player_facingforwardanimation_2
+      213: 6727821506554963161
+    second: Player_Right_2
   - first:
-      213: -1404318912603278388
-    second: player_facingforwardanimation_3
+      213: -4142210147824634017
+    second: Player_Right_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -98,7 +98,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_facingforwardanimation_0
+      name: Player_Right_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,14 +112,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6bba32362dbd4f7db8cc422b8ae410e
-      internalID: -6957681044683080812
+      spriteID: ce63db767c5be41179e26412c5df0f21
+      internalID: -7791752638867363331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_facingforwardanimation_1
+      name: Player_Right_1
       rect:
         serializedVersion: 2
         x: 32
@@ -133,14 +133,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54fd94ee08f7d435082eae31f7477844
-      internalID: 6637087964760002375
+      spriteID: 016417db4709a441990831f804827a43
+      internalID: 6286454110433351642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_facingforwardanimation_2
+      name: Player_Right_2
       rect:
         serializedVersion: 2
         x: 64
@@ -154,14 +154,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26bd17fc8d84c4bee9846271815ee4d5
-      internalID: -8567094211590943435
+      spriteID: 6e05449c0585342fa933abfaba630f43
+      internalID: 6727821506554963161
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_facingforwardanimation_3
+      name: Player_Right_3
       rect:
         serializedVersion: 2
         x: 96
@@ -175,8 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9790b40f4122e431fbdf0c2168a9a086
-      internalID: -1404318912603278388
+      spriteID: 6a42fa0f4f65341f3b483e4609c0dd33
+      internalID: -4142210147824634017
       vertices: []
       indices: 
       edges: []

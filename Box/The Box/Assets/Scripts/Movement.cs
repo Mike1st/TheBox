@@ -6,35 +6,43 @@ public class Movement : MonoBehaviour
 {
     public Animator animator;
     public float speed;
-    private Rigidbody2D rb;
+    private Rigidbody2D rigidBody2D;
 
-    // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rigidBody2D = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-        Direction();
-        Vector3 tempVect = new Vector3(h, v, 0);
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("Horizontal", horizontal);
+        animator.SetFloat("Vertical", vertical);
+
+        if (Mathf.Approximately(horizontal,0) && Mathf.Approximately(vertical, 0))
+        {
+            animator.SetFloat("Speed", 0);
+        }
+        else
+        {
+            animator.SetFloat("Speed", 1);
+        }
+
+        Vector3 tempVect = new Vector3(horizontal, vertical, 0);
         tempVect = tempVect.normalized * speed * Time.deltaTime;
-        rb.MovePosition(rb.transform.position + tempVect);
+        rigidBody2D.MovePosition(rigidBody2D.transform.position + tempVect);
     }
 
-    void Direction()
-    {
-        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.UpArrow))
-            print("Up");
-        else if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.DownArrow))
-            print("Down");
-        else if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
-            print("Left");
-        else if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.RightArrow))
-            print("Right");
-    }
+    //void Direction()
+    //{
+    //    //if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.UpArrow))
+    //    //    print("Up");
+    //    //else if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.DownArrow))
+    //    //    print("Down");
+    //    //else if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
+    //    //    print("Left");
+    //    //else if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+    //    //    print("Right");
+    //}
 }

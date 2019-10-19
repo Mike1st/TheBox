@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckForArrow : MonoBehaviour
 {
-    int score = 0;
+    int score;
     Arrow arrow;
     const int KEY_RIGHT = 90;
     const int KEY_DOWN = 180;
@@ -19,6 +19,7 @@ public class CheckForArrow : MonoBehaviour
     {
         arrow = collision.gameObject.GetComponent<Arrow>();
         int rotation = arrow.GetRotation();
+        Debug.Log("Collision Detected");
         CheckIfArrowCorrect(rotation);
     }
 

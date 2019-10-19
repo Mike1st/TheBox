@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TextboxManager : MonoBehaviour
 {
@@ -108,7 +109,10 @@ public class TextboxManager : MonoBehaviour
             textLines[currentLine] = textLines[currentLine].Replace("\\n", "\n");
             StartCoroutine(TextScroll(textLines[currentLine]));
         }
-      
+        if(!isTyping && Input.GetKeyDown(KeyCode.Space) && (currentLine == 2 || currentLine == 4))
+        {
+            SceneManager.LoadScene("Normal");
+        }
     }
 
     private IEnumerator TextScroll(string lineofText)

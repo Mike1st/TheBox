@@ -20,7 +20,7 @@ public class SwitchScene : MonoBehaviour
 
     private void OnMouseDown()
     {
-        SceneManager.LoadScene("Normal");
+        SceneManager.LoadScene("PostOffice");
     }
 
     

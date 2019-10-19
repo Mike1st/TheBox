@@ -476,8 +476,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1429436382}
   textFile: {fileID: 4900000, guid: 0030366822213467282c94cdecfdc47a, type: 3}
-  textFile2: {fileID: 0}
-  textFile3: {fileID: 0}
   textLines: []
   currentLine: 0
   endLine: 0

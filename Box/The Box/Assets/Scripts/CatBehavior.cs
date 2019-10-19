@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class CatBehavior : MonoBehaviour
 {
+    int catLives = 9;
     SpriteRenderer spriteRenderer;
     [SerializeField] Sprite[] catSprites;
-    [SerializeField] Sprite[] catHealth;
+    public static CatBehavior instance;
 
     private void Awake()
     {
+        instance = this;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -28,5 +30,15 @@ public class CatBehavior : MonoBehaviour
             spriteRenderer.sprite = catSprites[random];
         }
 
+    }
+
+    public int GetCatLives()
+    {
+        return catLives;
+    }
+
+    public void SetCatLives(int damage)
+    {
+        catLives += damage;
     }
 }

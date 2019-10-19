@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class CheckForArrow : MonoBehaviour
 {
-    int score;
+    int score = 0;
     Arrow arrow;
     const int KEY_RIGHT = 90;
     const int KEY_DOWN = 180;
     const int KEY_UP = 0;
     int rotation = 0;
-    
-    //void Update()
-    //{
-        
-    //}
+    public static CheckForArrow instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     public void OnTriggerStay2D(Collider2D collision)
     {
@@ -42,17 +43,20 @@ public class CheckForArrow : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow) && rotation == KEY_RIGHT)
         {
             Debug.Log("Right Key Detected");
+            CatBehavior.instance.SetCatLives(-1);
             score++;
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && rotation == KEY_DOWN)
         {
             Debug.Log("Down Key Detected");
+            CatBehavior.instance.SetCatLives(-1);
             score++;
         }
 
         else if (Input.GetKeyDown(KeyCode.UpArrow) && rotation == KEY_UP)
         {
             Debug.Log("Up Key Detected");
+            CatBehavior.instance.SetCatLives(-1);
             score++;
         }
         else

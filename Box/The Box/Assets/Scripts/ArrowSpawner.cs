@@ -5,6 +5,7 @@ using UnityEngine;
 public class ArrowSpawner : MonoBehaviour
 {
     [SerializeField] Arrow arrow;
+    [SerializeField] float spawnTime = 1f;
     bool spawn = true;
 
     private void Awake()
@@ -30,7 +31,7 @@ public class ArrowSpawner : MonoBehaviour
     {
         while (spawn)
         {
-            yield return new WaitForSeconds(.25f);
+            yield return new WaitForSeconds(spawnTime);
             SpawnArrow();
         }
     }

@@ -33,6 +33,8 @@ public class Movement : MonoBehaviour
         Vector3 tempVect = new Vector3(horizontal, vertical, 0);
         tempVect = tempVect.normalized * speed * Time.deltaTime;
         rigidBody2D.MovePosition(rigidBody2D.transform.position + tempVect);
+        if (Input.GetKeyDown(KeyCode.Space))
+            SceneManager.LoadScene("Combat");
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -44,15 +46,16 @@ public class Movement : MonoBehaviour
             SceneManager.LoadScene("Combat");
         }
     }
-    //void Direction()
-    //{
-    //    //if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.UpArrow))
-    //    //    print("Up");
-    //    //else if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.DownArrow))
-    //    //    print("Down");
-    //    //else if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
-    //    //    print("Left");
-    //    //else if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.RightArrow))
-    //    //    print("Right");
-    //}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        print("hit");
+    }
+
+    private void OnMouseEnter()
+    {
+        print("hit2");
+
+    }
+
 }

@@ -15,6 +15,11 @@ public class CheckForArrow : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        print("Hit2");
+    }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         arrow = collision.gameObject.GetComponent<Arrow>();
@@ -25,28 +30,20 @@ public class CheckForArrow : MonoBehaviour
 
     private void CheckIfArrowCorrect(int rotation)
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || rotation == KEY_RIGHT)
         {
-            if (rotation == KEY_RIGHT)
-            {
-                score++;
-            }
+            score++;
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow) || rotation == KEY_DOWN)
         {
-            if (rotation == KEY_DOWN)
-            {
-                score++;
-            }
+            score++;   
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || rotation == KEY_UP)
         {
-            if (rotation == KEY_UP)
-            {
-                score++;
-            }
+
+            score++;
         }
         Debug.Log(score);
     }

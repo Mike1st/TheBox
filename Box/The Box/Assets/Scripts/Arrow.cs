@@ -23,19 +23,16 @@ public class Arrow : MonoBehaviour
         if (random == 0)
         {
             rotation = 90;
-            Debug.Log("-90");
         }
         //---Arrow Faces Down
         if (random == 1)
         {
             rotation = 180;
-            Debug.Log("180");
         }
         //---Arrow Faces Up
         if (random == 2)
         {
             rotation = 0;
-            Debug.Log("0");
         }
 
         rigidBody2D.rotation = rotation;

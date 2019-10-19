@@ -11,7 +11,7 @@ public class Arrow : MonoBehaviour
     private void Awake()
     {
         rigidBody2D = GetComponent<Rigidbody2D>();
-        rigidBody2D.AddForce(new Vector2(-300,0));
+        rigidBody2D.AddForce(new Vector2(-150,0));
         ChangeArrowDirection();
     }
 

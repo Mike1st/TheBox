@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -34,6 +35,15 @@ public class Movement : MonoBehaviour
         rigidBody2D.MovePosition(rigidBody2D.transform.position + tempVect);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("hit");
+        if (collision.gameObject.tag == "Boss")
+        {
+            print("Hit");
+            SceneManager.LoadScene("Combat");
+        }
+    }
     //void Direction()
     //{
     //    //if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.UpArrow))

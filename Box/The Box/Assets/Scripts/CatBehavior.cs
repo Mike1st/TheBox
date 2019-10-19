@@ -6,6 +6,7 @@ public class CatBehavior : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
     [SerializeField] Sprite[] catSprites;
+    [SerializeField] Sprite[] catHealth;
 
     private void Awake()
     {

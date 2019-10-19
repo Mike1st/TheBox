@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Normal.unity
     guid: 9201ee77c286840a88d75652c1b0ef40
+  - enabled: 1
+    path: Assets/Scenes/PostOffice.unity
+    guid: b038aea5790834623a7bfa370e44497b
   m_configObjects: {}

@@ -4,28 +4,34 @@ using UnityEngine;
 
 public class ArrowSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject arrow;
-    private new Rigidbody2D rigidbody2D;
+    [SerializeField] Arrow arrow;
+    bool spawn = true;
 
     private void Awake()
     {
-        
+        SpawnArrow();
     }
 
-    void Start()
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            spawn = false;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SpawnArrow()
     {
-        
+        Instantiate(arrow, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+
     }
 
-    public void temporaryForce()
+    IEnumerator Start()
     {
-
+        while (spawn)
+        {
+            yield return new WaitForSeconds(.25f);
+            SpawnArrow();
+        }
     }
-
 }

@@ -9,42 +9,55 @@ public class CheckForArrow : MonoBehaviour
     const int KEY_RIGHT = 90;
     const int KEY_DOWN = 180;
     const int KEY_UP = 0;
-
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        print("Hit2");
-    }
+    int rotation = 0;
     
-    private void OnCollisionEnter2D(Collision2D collision)
+    //void Update()
+    //{
+        
+    //}
+
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.anyKeyDown)
+        {
+            CheckIfArrowCorrect();
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         arrow = collision.gameObject.GetComponent<Arrow>();
-        int rotation = arrow.GetRotation();
-        Debug.Log("Collision Detected");
-        CheckIfArrowCorrect(rotation);
+        rotation = arrow.GetRotation();
     }
 
-    private void CheckIfArrowCorrect(int rotation)
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    arrow = collision.gameObject.GetComponent<Arrow>();
+    //    int rotation = arrow.GetRotation();
+    //    CheckIfArrowCorrect(rotation);
+    //}
+
+    private void CheckIfArrowCorrect()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow) || rotation == KEY_RIGHT)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && rotation == KEY_RIGHT)
         {
+            Debug.Log("Right Key Detected");
+            score++;
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && rotation == KEY_DOWN)
+        {
+            Debug.Log("Down Key Detected");
             score++;
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow) || rotation == KEY_DOWN)
+        else if (Input.GetKeyDown(KeyCode.UpArrow) && rotation == KEY_UP)
         {
-            score++;   
-        }
-
-        if (Input.GetKeyDown(KeyCode.UpArrow) || rotation == KEY_UP)
-        {
-
+            Debug.Log("Up Key Detected");
             score++;
         }
-        Debug.Log(score);
+        else
+        {
+            Debug.Log("BAd");
+        }
     }
 }

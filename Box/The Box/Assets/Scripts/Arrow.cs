@@ -5,13 +5,14 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     int rotation;
+    int destroyLayer = 9;
 
     Rigidbody2D rigidBody2D;
 
     private void Awake()
     {
         rigidBody2D = GetComponent<Rigidbody2D>();
-        rigidBody2D.AddForce(new Vector2(-150,0));
+        rigidBody2D.AddForce(new Vector2(-300f,0));
         ChangeArrowDirection();
     }
 
@@ -43,8 +44,15 @@ public class Arrow : MonoBehaviour
         return rotation;
     }
 
-    public void OnCollisionEnter2D()
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        if (collision.gameObject.layer == destroyLayer)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log("Why! ");
+        }
     }
 }

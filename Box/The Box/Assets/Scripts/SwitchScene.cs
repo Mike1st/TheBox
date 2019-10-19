@@ -2,14 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SwitchScene : MonoBehaviour
 {
-    [SerializeField] int combatScene = 1;
+    public TextMesh text;
 
-    public void SwitchToNextScene()
+    private void OnMouseOver()
     {
-        SceneManager.LoadScene(combatScene);
+        text.color = Color.white;
     }
 
+    private void OnMouseExit()
+    {
+        text.color = Color.black;
+    }
+
+    private void OnMouseDown()
+    {
+        SceneManager.LoadScene("Normal");
+    }
+
+    
 }
